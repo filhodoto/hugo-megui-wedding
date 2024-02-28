@@ -12,7 +12,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50 flex justify-between items-center w-full border border-sky-500">
+    <header className="fixed inset-x-0 top-0 z-50 flex justify-between items-center w-full border border-sky-500 bg-white">
       <div className="flex p-6 sm:px-8 sm:flex-1">
         <a href="#" className="-m-1.5 p-1.5">
           Margarida & Hugo
