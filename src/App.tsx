@@ -1,15 +1,12 @@
 import './App.css';
+import Header from '@components/Header';
+import Hero from '@components/Hero';
 
 function App() {
   return (
     <>
-      <h1>Margarida & Hugo</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias
-        sequi natus tempora adipisci eum hic dicta, illum numquam quo doloremque
-        fugiat odio repellat accusantium? Exercitationem facilis aliquid quo
-        debitis?
-      </p>
+      <Header />
+      <Hero />
     </>
   );
 }
