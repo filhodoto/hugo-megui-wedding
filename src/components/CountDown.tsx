@@ -13,7 +13,10 @@ const CountDown = (): JSX.Element => {
         // Make sure typescript accourns for all keys in rest o
         const count = rest[measure as keyof typeof rest];
         return (
-          <div key={`${count}`} className="flex flex-col gap-5 relative">
+          <div
+            key={`${count}-${measure}`}
+            className="flex flex-col gap-5 relative"
+          >
             <div className="h-16 w-16 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex justify-between items-center bg-[#343650] rounded-lg">
               <div className="relative h-2.5 w-2.5 sm:h-3 sm:w-3 !-left-[6px] rounded-full bg-white"></div>
               <span className="lg:text-7xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]">
