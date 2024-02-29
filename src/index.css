@@ -7,12 +7,22 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: #000;
+  color-scheme: light;
   background-color: #fff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @apply text-primary-700;
+
+  .no-focusring *:focus {
+    outline: none;
+  }
+}
+
+@layer components {
+  .form-input {
+    @apply block w-full rounded-md border-0 px-3.5 py-2 text-primary-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-action-300 sm:text-sm sm:leading-6;
+  }
 }

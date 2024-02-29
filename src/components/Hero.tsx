@@ -7,8 +7,8 @@ const quintaImgUrl = new URL(
 
 export default function Hero() {
   return (
-    <div className="pt-20 md:pt-32 text-center relative md:h-screen">
-      <div className="z-10 py-6 md:py-12 text-primary-700">
+    <div className="pt-20 md:pt-32 text-center relative">
+      <div className="z-10 px-6 py-6 md:py-12">
         <h1 className="text-5xl font-bold leading-tight sm:text-7xl py-5">
           Margarida & Hugo
         </h1>
@@ -21,12 +21,12 @@ export default function Hero() {
       <img
         src={quintaImgUrl}
         alt="Quinta Aquarela"
-        className="md:hidden md:max-w-4xl mx-auto z-0 w-full"
+        className=" md:max-w-4xl mx-auto z-0 w-full"
       />
-      <div
+      {/* <div
         className="hidden md:block bg-contain bg-no-repeat bg-center h-full"
         style={{ backgroundImage: `url(${quintaImgUrl})` }}
-      ></div>
+      ></div> */}
       <CountDown />
     </div>
   );
