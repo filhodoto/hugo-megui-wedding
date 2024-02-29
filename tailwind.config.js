@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         action: colors.red,
+        primary: colors.gray,
       },
     },
   },

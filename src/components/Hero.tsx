@@ -8,7 +8,7 @@ const quintaImgUrl = new URL(
 export default function Hero() {
   return (
     <div className="pt-20 md:pt-32 text-center relative md:h-screen">
-      <div className="z-10 py-6 md:py-12 ">
+      <div className="z-10 py-6 md:py-12 text-primary-700">
         <h1 className="text-5xl font-bold leading-tight sm:text-7xl py-5">
           Margarida & Hugo
         </h1>
