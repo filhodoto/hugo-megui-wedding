@@ -68,7 +68,7 @@ const Form = (): JSX.Element => {
         onSubmit={handleSubmit(onSubmit)}
         className="mx-auto mt-8 max-w-xl sm:mt-12"
       >
-        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 mb-6">
           <div className="sm:col-span-2">
             <label
               htmlFor="name"
@@ -205,7 +205,7 @@ const Form = (): JSX.Element => {
         {/* Show alert after submitting form */}
         {isSubmitSuccessful && (
           <div
-            className={`mt-8 bg-red-100  text-red-600 px-4 py-3 rounded relative text-xs  ${
+            className={`mb-6 px-4 py-3 rounded relative text-xs  ${
               isSuccess
                 ? 'bg-green-100  text-green-600'
                 : 'bg-red-100  text-red-600'
@@ -221,7 +221,7 @@ const Form = (): JSX.Element => {
           </div>
         )}
 
-        <div className="mt-10">
+        <div>
           <button
             type="submit"
             className="block w-full rounded-md bg-action-400 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-action-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
