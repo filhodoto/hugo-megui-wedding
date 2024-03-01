@@ -1,29 +1,51 @@
 import { ChangeEvent, useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
-
+import { useForm } from 'react-hook-form';
+import useWeb3Forms from '@web3forms/react';
+import Loader from '@/assets/Icons/Loader';
 interface FormProps {
   name: string;
   attendance: 'sim' | 'nao';
   people: number;
   kids: string;
-  foodRestrictions: string;
+  'food-restrictions': string;
 }
+
+const WEB_3_FORM_KEY_GONCALO = '71edb852-a85e-4fdd-b2b5-8722ee478217';
 
 const Form = (): JSX.Element => {
   const {
     register,
     handleSubmit,
     clearErrors,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitSuccessful, isSubmitting },
   } = useForm<FormProps>();
 
-  const [isAttending, setIsAttending] = useState(false);
+  const [isAttending, setIsAttending] = useState<boolean>();
+  const [isSuccess, setIsSuccess] = useState<boolean>();
+  const [formResult, setFormResult] = useState<string>();
 
-  const onSubmit: SubmitHandler<FormProps> = (data) => {
-    console.log('isAttending on submit >>> ', isAttending);
-
-    console.log(data);
-  };
+  const { submit: onSubmit } = useWeb3Forms({
+    access_key: WEB_3_FORM_KEY_GONCALO,
+    // access_key: 'WEB_3_FORM_KEY_GONCALO',
+    settings: {
+      from_name: 'RSVP Casamento',
+      subject: 'Resposta RSVP Casamento',
+    },
+    onSuccess: (msg, data) => {
+      setIsSuccess(true);
+      setFormResult(msg);
+      console.log('msg ', msg);
+      console.log('data ', data);
+      console.log('Success');
+      reset();
+    },
+    onError: (msg, data) => {
+      setIsSuccess(false);
+      setFormResult(msg);
+      console.log('msg error ', msg);
+    },
+  });
 
   const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
     // Tell form if user as selected that they're going
@@ -79,20 +101,30 @@ const Form = (): JSX.Element => {
             >
               Confirmo presença
             </label>
-            <div className="relative mt-2.5">
-              <select
-                {...register('attendance', {
-                  required: true,
-                })}
-                id="attendance"
-                className="form-input h-10"
-                name="attendance"
-                onChange={handleSelectChange}
-              >
-                <option value="">Selecione uma opção</option>
-                <option value="sim">Sim</option>
-                <option value="nao">Não</option>
-              </select>
+            <div className="mt-2.5">
+              <div className="relative">
+                <select
+                  {...register('attendance', {
+                    required: true,
+                  })}
+                  id="attendance"
+                  className="form-input h-10 appearance-none"
+                  onChange={handleSelectChange}
+                >
+                  <option value="">Selecione uma opção</option>
+                  <option value="sim">Sim</option>
+                  <option value="nao">Não</option>
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-primary-700">
+                  <svg
+                    className="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  </svg>
+                </div>
+              </div>
               {errors.attendance && (
                 <p className="text-red-500 text-xs italic mt-2 ml-1">
                   Por favor escolha uma opção.
@@ -111,14 +143,20 @@ const Form = (): JSX.Element => {
               <input
                 {...register('people', {
                   required: isAttending,
-                  min: 0,
+                  min: 1,
                   disabled: !isAttending,
                 })}
+                min="1"
                 type="number"
                 name="people"
                 id="people"
                 className="form-input"
               />
+              {errors.attendance && (
+                <p className="text-red-500 text-xs italic mt-2 ml-1">
+                  Coloque o numero de pessoas (incluindo crianças)
+                </p>
+              )}
             </div>
           </div>
           <div className="sm:col-span-2">
@@ -134,7 +172,7 @@ const Form = (): JSX.Element => {
                   disabled: !isAttending,
                 })}
                 type="text"
-                name="kids"
+                name="Crianças"
                 id="kids"
                 autoComplete="organization"
                 className="form-input"
@@ -151,7 +189,7 @@ const Form = (): JSX.Element => {
             </label>
             <div className="mt-2.5">
               <textarea
-                {...register('foodRestrictions', {
+                {...register('food-restrictions', {
                   disabled: !isAttending,
                 })}
                 name="food-restrictions"
@@ -163,12 +201,32 @@ const Form = (): JSX.Element => {
             </div>
           </div>
         </div>
+
+        {/* Show alert after submitting form */}
+        {isSubmitSuccessful && (
+          <div
+            className={`mt-8 bg-red-100  text-red-600 px-4 py-3 rounded relative text-xs  ${
+              isSuccess
+                ? 'bg-green-100  text-green-600'
+                : 'bg-red-100  text-red-600'
+            }`}
+            role="alert"
+          >
+            <span className="block sm:inline">
+              {formResult ||
+                (isSuccess
+                  ? 'Message sent successfully'
+                  : 'Something went wrong. Please try later.')}
+            </span>
+          </div>
+        )}
+
         <div className="mt-10">
           <button
             type="submit"
             className="block w-full rounded-md bg-action-400 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-action-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
           >
-            Enviar RSVP
+            {isSubmitting ? <Loader /> : 'Enviar RSVP'}
           </button>
         </div>
       </form>
