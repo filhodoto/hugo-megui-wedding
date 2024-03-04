@@ -2,7 +2,10 @@ const foto = new URL('../assets/images/foto_1.jpg', import.meta.url).href;
 
 export default function OurHistory() {
   return (
-    <div className="grid md:grid-flow-col gap-x-8 py-20 md:py-26 px-6 relative container max-w-7xl m-auto">
+    <div
+      id="our_history"
+      className="grid md:grid-flow-col gap-x-8 py-20 md:py-26 px-6 relative container max-w-7xl m-auto"
+    >
       <article className="text-pretty">
         <h2 className="text-3xl font-bold leading-tight sm:text-5xl py-5">
           A nossa história
