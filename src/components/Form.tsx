@@ -10,8 +10,7 @@ interface FormProps {
   'food-restrictions': string;
 }
 
-// TODO:: HIDE this in env file
-const WEB_3_FORM_KEY_GONCALO = '71edb852-a85e-4fdd-b2b5-8722ee478217';
+const API_KEY = import.meta.env.VITE_WEB_3_FORM_KEY;
 
 const Form = (): JSX.Element => {
   const {
@@ -28,21 +27,17 @@ const Form = (): JSX.Element => {
   const [formResult, setFormResult] = useState<string>();
 
   const { submit: onSubmit } = useWeb3Forms({
-    access_key: WEB_3_FORM_KEY_GONCALO,
-    // access_key: 'WEB_3_FORM_KEY_GONCALO',
+    access_key: API_KEY,
     settings: {
       from_name: `RSVP Casamento - ${senderName}`,
       subject: 'Resposta RSVP Casamento',
     },
-    onSuccess: (msg, data) => {
+    onSuccess: (msg) => {
       setIsSuccess(true);
       setFormResult(msg);
-      console.log('msg ', msg);
-      console.log('data ', data);
-      console.log('Success');
       reset();
     },
-    onError: (msg, data) => {
+    onError: (msg) => {
       setIsSuccess(false);
       setFormResult(msg);
       console.log('msg error ', msg);
@@ -58,7 +53,7 @@ const Form = (): JSX.Element => {
   };
 
   return (
-    <div className="mx-auto mt-16 max-w-xl px-6 sm:mt-20">
+    <div className="mx-auto mt-16 max-w-xl px-6 sm:mt-205">
       <h2 className="text-xl font-semibold max-w-3xl mx-auto sm:text-3xl">
         RSVP
       </h2>
