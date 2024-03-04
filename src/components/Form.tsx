@@ -10,6 +10,7 @@ interface FormProps {
   'food-restrictions': string;
 }
 
+// TODO:: HIDE this in env file
 const WEB_3_FORM_KEY_GONCALO = '71edb852-a85e-4fdd-b2b5-8722ee478217';
 
 const Form = (): JSX.Element => {
@@ -21,6 +22,7 @@ const Form = (): JSX.Element => {
     formState: { errors, isSubmitSuccessful, isSubmitting },
   } = useForm<FormProps>();
 
+  const [senderName, setSenderName] = useState('');
   const [isAttending, setIsAttending] = useState<boolean>();
   const [isSuccess, setIsSuccess] = useState<boolean>();
   const [formResult, setFormResult] = useState<string>();
@@ -29,7 +31,7 @@ const Form = (): JSX.Element => {
     access_key: WEB_3_FORM_KEY_GONCALO,
     // access_key: 'WEB_3_FORM_KEY_GONCALO',
     settings: {
-      from_name: 'RSVP Casamento',
+      from_name: `RSVP Casamento - ${senderName}`,
       subject: 'Resposta RSVP Casamento',
     },
     onSuccess: (msg, data) => {
@@ -56,7 +58,7 @@ const Form = (): JSX.Element => {
   };
 
   return (
-    <div className="mx-auto mt-16 max-w-xl px-6 sm:mt-20 border">
+    <div className="mx-auto mt-16 max-w-xl px-6 sm:mt-20">
       <h2 className="text-xl font-semibold max-w-3xl mx-auto sm:text-3xl">
         RSVP
       </h2>
@@ -86,6 +88,7 @@ const Form = (): JSX.Element => {
                 id="name"
                 autoComplete="given-name"
                 className="form-input"
+                onChange={(e) => setSenderName(e.target.value)}
               />
               {errors.name && (
                 <p className="text-red-500 text-xs italic mt-2 ml-1">
@@ -137,7 +140,7 @@ const Form = (): JSX.Element => {
               htmlFor="people"
               className="block text-sm font-semibold leading-6 text-primary-700"
             >
-              Numero de pessoas
+              Numero de pessoas <span className="text-xs">(adultos)</span>
             </label>
             <div className="relative mt-2.5">
               <input
@@ -152,9 +155,9 @@ const Form = (): JSX.Element => {
                 id="people"
                 className="form-input"
               />
-              {errors.attendance && (
+              {errors.people && (
                 <p className="text-red-500 text-xs italic mt-2 ml-1">
-                  Coloque o numero de pessoas (incluindo crianças)
+                  Coloque o numero de pessoas
                 </p>
               )}
             </div>
@@ -164,7 +167,10 @@ const Form = (): JSX.Element => {
               htmlFor="kids"
               className="block text-sm font-semibold leading-6 text-primary-700"
             >
-              Levo crianças (Se sim por favor dizer quantas e idade)
+              Levo crianças{' '}
+              <span className="text-xs">
+                (Se sim por favor dizer quantas e idade)
+              </span>
             </label>
             <div className="mt-2.5">
               <input
@@ -184,8 +190,10 @@ const Form = (): JSX.Element => {
               htmlFor="food-restrictions"
               className="block text-sm font-semibold leading-6 text-primary-700"
             >
-              Restrições alimentares (Vegan, Vegetariano, Celíaco, alergias e
-              intolerancias, outros)
+              Restrições alimentares{' '}
+              <span className="text-xs">
+                (Vegan, Vegetariano, Celíaco, alergias e intolerancias, outros)
+              </span>
             </label>
             <div className="mt-2.5">
               <textarea
