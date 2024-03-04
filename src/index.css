@@ -15,10 +15,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @apply text-primary-700;
-
-  .no-focusring *:focus {
-    outline: none;
-  }
 }
 
 @layer components {
