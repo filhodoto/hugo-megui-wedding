@@ -1,8 +1,8 @@
 import './App.css';
 import Header from '@components/Header';
 import Hero from '@components/Hero';
-import Form from '@components/Form';
 import OurHistory from './components/OurHistory';
+import RSVP from './components/RSVP';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Hero />
       <OurHistory />
-      <Form />
+      <RSVP />
     </div>
   );
 }
