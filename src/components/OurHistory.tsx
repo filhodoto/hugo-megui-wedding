@@ -40,7 +40,7 @@ export default function OurHistory() {
       </article>
       {/* For landscape */}
       <img src={foto} alt="our history" className="xl:hidden" />
-      <div className="hidden border pt-9 min-h-96 xl:block ">
+      <div className="hidden pt-9 min-h-96 xl:block ">
         <div
           className="bg-cover xl:bg-cover bg-no-repeat bg-top h-full w-full"
           style={{ backgroundImage: `url(${foto})` }}

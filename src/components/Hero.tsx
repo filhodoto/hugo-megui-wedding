@@ -23,7 +23,7 @@ export default function Hero() {
         className="lg:hidden md:max-w-4xl mx-auto z-0 w-full"
       />
       <div
-        className="hidden lg:block border bg-contain bg-no-repeat bg-center h-full min-h-lvh md:min-h-[50vh] lg:min-h-lvh"
+        className="hidden lg:block bg-contain bg-no-repeat bg-center h-full min-h-lvh md:min-h-[50vh] lg:min-h-lvh"
         style={{ backgroundImage: `url(${quintaImgUrl})` }}
       ></div>
       <CountDown />
