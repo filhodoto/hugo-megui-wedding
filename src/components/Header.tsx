@@ -3,19 +3,35 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-  { name: 'A nossa história Dia', href: '#' },
-  { name: 'O Dia', href: '#' },
-  { name: 'RSVP', href: '#' },
-  { name: 'Outras informações', href: '#' },
+  { name: 'A nossa história', href: '#our_history' },
+  { name: 'O Dia', href: '#day' },
+  { name: 'RSVP', href: '#rsvp' },
+  { name: 'Outras informações', href: '#other_info' },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleNavClick = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+
+    // Get element based on setting "id" in elements with same value as href in links
+    const target = e.target as HTMLAnchorElement;
+    const id = target.getAttribute('href')?.replace('#', '');
+    const element = document.getElementById(String(id));
+
+    element?.scrollIntoView({
+      behavior: 'smooth',
+    });
+
+    // Close menu if it's mobile navigation
+    mobileMenuOpen && setMobileMenuOpen(false);
+  };
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-between items-center w-full border border-sky-500 bg-white text-primary-900">
       <div className="flex p-6 sm:px-8 sm:flex-1">
-        <a href="#" className="-m-1.5 p-1.5">
+        <a href="#initial" className="-m-1.5 p-1.5" onClick={handleNavClick}>
           Margarida & Hugo
         </a>
       </div>
@@ -40,6 +56,7 @@ export default function Header() {
               key={item.name}
               href={item.href}
               className="text-sm font-semibold leading-6 text-gray-900 hover:text-action-400 transition-all"
+              onClick={handleNavClick}
             >
               {item.name}
             </a>
@@ -73,6 +90,7 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    onClick={handleNavClick}
                   >
                     {item.name}
                   </a>
