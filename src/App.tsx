@@ -13,8 +13,8 @@ function App() {
       <Hero />
       <OurHistory />
       <Day />
-      <OtherInfo />
       <RSVP />
+      <OtherInfo />
     </div>
   );
 }

@@ -53,10 +53,7 @@ const Form = (): JSX.Element => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="mx-auto mt-8 max-w-xl sm:mt-12"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="mt-8 sm:mt-12">
       <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 mb-6">
         <div className="sm:col-span-2">
           <label
