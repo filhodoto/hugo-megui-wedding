@@ -12,9 +12,8 @@ export default function Hero() {
         <h1 className="text-5xl font-bold leading-tight sm:text-7xl py-5">
           Margarida & Hugo
         </h1>
-        <p className="text-lg max-w-3xl mx-auto sm:text-2xl ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias
-          sequi natus tempora adipisci eum hic dicta.
+        <p className="text-3xl max-w-3xl mx-auto sm:text-5xl ">
+          27 de Julho de 2024
         </p>
       </div>
       {/* TODO:: Clean this. Probably no need for image and div */}
@@ -23,10 +22,6 @@ export default function Hero() {
         alt="Quinta Aquarela"
         className=" md:max-w-4xl mx-auto z-0 w-full"
       />
-      {/* <div
-        className="hidden md:block bg-contain bg-no-repeat bg-center h-full"
-        style={{ backgroundImage: `url(${quintaImgUrl})` }}
-      ></div> */}
       <CountDown />
     </div>
   );

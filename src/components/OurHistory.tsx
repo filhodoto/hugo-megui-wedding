@@ -1,10 +1,10 @@
-const foto = new URL('../assets/images/foto_1.jpg', import.meta.url).href;
+const foto = new URL('../assets/images/o_dia.jpg', import.meta.url).href;
 
 export default function OurHistory() {
   return (
     <div
       id="our_history"
-      className="grid md:grid-flow-col gap-x-8 py-20 md:py-26 px-6 relative container max-w-7xl m-auto"
+      className="grid lg:grid-cols-2 lg:grid-flow-col gap-x-8 py-20 md:py-26 px-6 relative container max-w-7xl m-auto min-h-lvh"
     >
       <article className="text-pretty">
         <h2 className="text-3xl font-bold leading-tight sm:text-5xl py-5">
@@ -38,7 +38,13 @@ export default function OurHistory() {
         </p>
         <p className="py-2">Megui e Hugo</p>
       </article>
-      <img src={foto} alt="Foto 1" className="h-auto max-w-md mt-5" />
+      {/* For landscape */}
+      <div className="border min-h-96 md:min-h-[50vh] lg:min-h-[10vh]">
+        <div
+          className="bg-cover bg-no-repeat bg-center h-full w-full"
+          style={{ backgroundImage: `url(${foto})` }}
+        ></div>
+      </div>
     </div>
   );
 }
