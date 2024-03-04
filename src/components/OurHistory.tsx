@@ -1,16 +1,16 @@
-const foto = new URL('../assets/images/foto_1.jpg', import.meta.url).href;
+const foto = new URL('../assets/images/o_dia.jpg', import.meta.url).href;
 
 export default function OurHistory() {
   return (
     <div
       id="our_history"
-      className="grid md:grid-flow-col gap-x-8 py-20 md:py-26 px-6 relative container max-w-7xl m-auto"
+      className="grid xl:grid-cols-2 xl:grid-flow-col gap-x-8 px-6 py-20 md:py-26 md:px-10 relative m-auto min-h-lvh max-w-[90rem]"
     >
       <article className="text-pretty">
         <h2 className="text-3xl font-bold leading-tight sm:text-5xl py-5">
           A nossa história
         </h2>
-        <p className="py-2">
+        <p className="py-2 text-lg">
           Como casal do século XXI que somos, as redes sociais apresentaram-nos
           em dezembro de 2018 e rapidamente nos tornamos inseparáveis. Juntos,
           criámos bonitas memórias desde muito cedo, num forte compromisso que
@@ -27,7 +27,7 @@ export default function OurHistory() {
           aprovação de uma bonita aurora boreal que iluminava os escuros céus de
           uma praia no norte da Noruega.
         </p>
-        <p className="py-2">
+        <p className="py-2 text-lg">
           Estamos unidos por um grande amor, alicerçado na confiança, no apoio
           mútuo e nos nossos valores. Une-nos o amor pelas nossas profissões,
           pelo sentido de missão e de contributo para uma sociedade melhor.
@@ -36,9 +36,16 @@ export default function OurHistory() {
           vemos nas nossas diferenças uma oportunidade para crescer, aceitar e
           aprender.
         </p>
-        <p className="py-2">Megui e Hugo</p>
+        <p className="py-2 text-xl">Megui e Hugo</p>
       </article>
-      <img src={foto} alt="Foto 1" className="h-auto max-w-md mt-5" />
+      {/* For landscape */}
+      <img src={foto} alt="our history" className="xl:hidden" />
+      <div className="hidden pt-9 min-h-96 xl:block ">
+        <div
+          className="bg-cover xl:bg-cover bg-no-repeat bg-top h-full w-full"
+          style={{ backgroundImage: `url(${foto})` }}
+        ></div>
+      </div>
     </div>
   );
 }
