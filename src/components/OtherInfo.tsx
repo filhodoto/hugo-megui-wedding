@@ -1,21 +1,7 @@
 import Suite from '@/assets/Icons/Suit';
-import { CloudArrowUpIcon, GiftIcon } from '@heroicons/react/24/outline';
+import { GiftIcon } from '@heroicons/react/24/outline';
 
-const foto = new URL('../assets/images/other_info.jpg', import.meta.url).href;
-
-const features = [
-  {
-    name: 'Presente de Casamento',
-    description:
-      'Caso queiram contribuir para continuarmos as nossas aventuras por esse mundo fora, podem fazê-lo através deste IBAN. Muito obrigado! PT50003300000007273370505',
-    icon: GiftIcon,
-  },
-  {
-    name: 'Dress code',
-    description: 'Formal',
-    icon: CloudArrowUpIcon,
-  },
-];
+// const foto = new URL('../assets/images/other_info.jpg', import.meta.url).href;
 
 const OtherInfo = () => {
   return (
