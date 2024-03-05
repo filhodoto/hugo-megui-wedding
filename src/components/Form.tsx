@@ -18,6 +18,7 @@ const Form = (): JSX.Element => {
     handleSubmit,
     clearErrors,
     reset,
+    resetField,
     formState: { errors, isSubmitSuccessful, isSubmitting },
   } = useForm<FormProps>();
 
@@ -50,6 +51,9 @@ const Form = (): JSX.Element => {
 
     // Clear attendance error
     clearErrors('attendance');
+
+    // Clear peoples number to make sure we don't send a confusing "no" with number of people
+    resetField('people');
   };
 
   return (
