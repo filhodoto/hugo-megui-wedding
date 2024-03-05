@@ -19,7 +19,7 @@ const CountDown = (): JSX.Element => {
           >
             <div className="h-20 w-20 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex justify-between items-center bg-action-300 border border-action-400 rounded-lg">
               <div className="relative h-2.5 w-2.5 sm:h-3 sm:w-3 !-left-[6px] rounded-full bg-white"></div>
-              <span className="lg:text-7xl sm:text-6xl text-3xl font-semibold text-white">
+              <span className="font-heading lg:text-7xl sm:text-6xl text-3xl font-semibold text-white">
                 {count}
               </span>
               <div className="relative h-2.5 w-2.5 sm:h-3 sm:w-3 -right-[6px] rounded-full bg-white"></div>

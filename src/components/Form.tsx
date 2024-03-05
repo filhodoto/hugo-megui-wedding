@@ -58,7 +58,7 @@ const Form = (): JSX.Element => {
         <div className="sm:col-span-2">
           <label
             htmlFor="name"
-            className="block text-sm font-semibold leading-6 text-primary-700"
+            className="block font-semibold leading-6 text-primary-700"
           >
             Nome
           </label>
@@ -84,7 +84,7 @@ const Form = (): JSX.Element => {
         <div>
           <label
             htmlFor="attendance"
-            className="block text-sm font-semibold leading-6 text-primary-700"
+            className="block font-semibold leading-6 text-primary-700"
           >
             Confirmo presença
           </label>
@@ -122,7 +122,7 @@ const Form = (): JSX.Element => {
         <div>
           <label
             htmlFor="people"
-            className="block text-sm font-semibold leading-6 text-primary-700"
+            className="block font-semibold leading-6 text-primary-700"
           >
             Numero de pessoas <span className="text-xs">(adultos)</span>
           </label>
@@ -149,7 +149,7 @@ const Form = (): JSX.Element => {
         <div className="sm:col-span-2">
           <label
             htmlFor="kids"
-            className="block text-sm font-semibold leading-6 text-primary-700"
+            className="block font-semibold leading-6 text-primary-700"
           >
             Levo crianças{' '}
             <span className="text-xs">
@@ -172,7 +172,7 @@ const Form = (): JSX.Element => {
         <div className="sm:col-span-2">
           <label
             htmlFor="food-restrictions"
-            className="block text-sm font-semibold leading-6 text-primary-700"
+            className="block font-semibold leading-6 text-primary-700"
           >
             Restrições alimentares{' '}
             <span className="text-xs">
@@ -216,7 +216,7 @@ const Form = (): JSX.Element => {
       <div>
         <button
           type="submit"
-          className="block w-full rounded-md bg-action-400 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-action-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+          className="block w-full rounded-md bg-action-400 px-3.5 py-2.5 text-center font-semibold text-white shadow-sm hover:bg-action-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
         >
           {isSubmitting ? <Loader /> : 'Enviar RSVP'}
         </button>
