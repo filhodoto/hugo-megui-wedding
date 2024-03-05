@@ -8,13 +8,13 @@ export default function RSVP() {
       className="grid lg:grid-cols-2 lg:grid-flow-col gap-x-11 py-20 md:py-26 relative m-auto"
     >
       {/* For landscape */}
-      <img src={foto} alt="our history" className="pt-9 min-w-full lg:hidden" />
+      <img src={foto} alt="rsvp" className="pt-9 min-w-full lg:hidden" />
       <div
         className="text-pretty text-lg px-6 md:px-8 xl:pl-20 border bg-cover bg-no-repeat bg-top h-full w-full"
         style={{ backgroundImage: `url(${foto})` }}
       ></div>
 
-      <div className="px-6 md:px-8 md:pl-0 xl:pr-20">
+      <div className="px-6 md:px-8 lg:pl-0 xl:pr-20">
         <h2 className="heading-2">RSVP</h2>
         <p className="text-lg max-w-xl sm:text-xl ">
           Queremos muito contar convosco neste nosso dia, esperamos as vossas
