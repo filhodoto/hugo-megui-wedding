@@ -55,7 +55,7 @@ export default function Header() {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900 hover:text-action-400 transition-all"
+              className="text-sm md:text-base font-semibold leading-6 text-gray-900 hover:text-action-400 transition-all"
               onClick={handleNavClick}
             >
               {item.name}

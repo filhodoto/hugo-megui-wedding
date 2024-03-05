@@ -11,6 +11,10 @@ export default {
         action: colors.red,
         primary: colors.gray,
       },
+      fontFamily: {
+        heading: ['"Noto Serif"', 'cursive'],
+        body: ['"Noto Sans"', 'sans serif'],
+      },
     },
   },
   plugins: [],

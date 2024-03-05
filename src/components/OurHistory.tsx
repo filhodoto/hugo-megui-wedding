@@ -6,11 +6,9 @@ export default function OurHistory() {
       id="our_history"
       className="grid xl:grid-cols-2 xl:grid-flow-col gap-x-8 px-6 py-20 md:py-26 md:px-10 relative m-auto min-h-lvh max-w-[90rem]"
     >
-      <article className="text-pretty">
-        <h2 className="text-3xl font-bold leading-tight sm:text-5xl py-5">
-          A nossa história
-        </h2>
-        <p className="py-2 text-lg">
+      <article className="text-pretty text-lg">
+        <h2 className="heading-2">A nossa história</h2>
+        <p className="py-2">
           Como casal do século XXI que somos, as redes sociais apresentaram-nos
           em dezembro de 2018 e rapidamente nos tornamos inseparáveis. Juntos,
           criámos bonitas memórias desde muito cedo, num forte compromisso que
@@ -27,7 +25,7 @@ export default function OurHistory() {
           aprovação de uma bonita aurora boreal que iluminava os escuros céus de
           uma praia no norte da Noruega.
         </p>
-        <p className="py-2 text-lg">
+        <p className="py-2">
           Estamos unidos por um grande amor, alicerçado na confiança, no apoio
           mútuo e nos nossos valores. Une-nos o amor pelas nossas profissões,
           pelo sentido de missão e de contributo para uma sociedade melhor.
@@ -36,10 +34,10 @@ export default function OurHistory() {
           vemos nas nossas diferenças uma oportunidade para crescer, aceitar e
           aprender.
         </p>
-        <p className="py-2 text-xl">Megui e Hugo</p>
+        <p className="py-2">Megui & Hugo</p>
       </article>
       {/* For landscape */}
-      <img src={foto} alt="our history" className="xl:hidden" />
+      <img src={foto} alt="our history" className="pt-9 xl:hidden" />
       <div className="hidden pt-9 min-h-96 xl:block ">
         <div
           className="bg-cover xl:bg-cover bg-no-repeat bg-top h-full w-full"
