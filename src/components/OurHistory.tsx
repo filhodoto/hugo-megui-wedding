@@ -1,4 +1,4 @@
-const foto = new URL('../assets/images/a_nossa_historia.jpg', import.meta.url)
+const photo = new URL('../assets/images/a_nossa_historia.jpg', import.meta.url)
   .href;
 
 export default function OurHistory() {
@@ -38,11 +38,15 @@ export default function OurHistory() {
         <p className="py-2">Megui & Hugo</p>
       </article>
       {/* For landscape */}
-      <img src={foto} alt="our history" className="pt-9 min-w-full xl:hidden" />
+      <img
+        src={photo}
+        alt="our history"
+        className="pt-9 min-w-full xl:hidden"
+      />
       <div className="hidden min-h-96 xl:block ">
         <div
           className="bg-cover bg-no-repeat bg-top h-full w-full"
-          style={{ backgroundImage: `url(${foto})` }}
+          style={{ backgroundImage: `url(${photo})` }}
         ></div>
       </div>
     </div>

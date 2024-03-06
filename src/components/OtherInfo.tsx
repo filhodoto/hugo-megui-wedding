@@ -1,7 +1,7 @@
 import Suite from '@/assets/Icons/Suit';
 import { GiftIcon } from '@heroicons/react/24/outline';
 
-const foto = new URL('../assets/images/outra.jpg', import.meta.url).href;
+const photo = new URL('../assets/images/other_info.jpg', import.meta.url).href;
 
 const OtherInfo = () => {
   return (
@@ -41,11 +41,11 @@ const OtherInfo = () => {
       </div>
 
       {/* For landscape */}
-      <img src={foto} alt="other info" className="pt-9 min-w-full lg:hidden" />
+      <img src={photo} alt="other info" className="pt-9 min-w-full lg:hidden" />
       <div className="hidden min-h-96 lg:block ">
         <div
           className="bg-cover bg-no-repeat h-full w-full"
-          style={{ backgroundImage: `url(${foto})` }}
+          style={{ backgroundImage: `url(${photo})` }}
         ></div>
       </div>
     </div>
