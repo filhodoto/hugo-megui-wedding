@@ -1,7 +1,14 @@
 import { HomeIcon, MapIcon } from '@heroicons/react/24/outline';
 const photo = new URL('../assets/images/day_1.jpg', import.meta.url).href;
 const photo_two = new URL('../assets/images/day_2.jpg', import.meta.url).href;
+
 const mapsLink = 'https://maps.app.goo.gl/P8mh7THzE61Nva4V9';
+
+const hotels = [
+  { name: 'Hotel Vila Galé Sintra', code: 'SJRO12FKL', link: '#' },
+  { name: 'NH Sintra Centro', code: 'SJRO12FKL', link: '#' },
+  { name: 'Pestana Sintra Golf', code: 'SJRO12FKL', link: '#' },
+];
 
 const Day = () => {
   return (
@@ -13,11 +20,11 @@ const Day = () => {
           sequi natus tempora adipisci eum hic dicta.
         </p>
       </article>
-      <img src={photo} alt="rsvp" className=" mt-12  min-w-full lg:hidden" />
+      <img src={photo} alt="rsvp" className="mt-12 min-w-full lg:hidden" />
 
       {/* Info Grid */}
-      <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 min-h-[60vh] px-8 py-12 lg:mt-12 bg-action-50/75">
-        <div className="bg-white p-10">
+      <div className="grid grid-cols-2 gap-8 lg:gap-12 lg:grid-cols-3 min-h-[60vh] px-8 py-12 lg:mt-12 bg-action-50/75">
+        <div className="bg-white p-10 col-span-full	 sm:col-span-1">
           <div className="flex flex-col items-center text-action-400 mb-5">
             <MapIcon className="h-20 w-20 mb-1" />
             <h3 className="text-2xl font-semibold leading-7">Estacionamento</h3>
@@ -28,7 +35,7 @@ const Day = () => {
             alias sequi natus tempora adipisci eum hic dicta.
           </p>
         </div>
-        <div className="bg-white p-10 text-center flex flex-col items-center">
+        <div className="bg-white p-10 col-span-full	 text-center flex flex-col items-center sm:col-span-1">
           <div className="flex flex-col items-center text-action-400 mb-5">
             <MapIcon className="h-20 w-20 mb-1" />
             <h3 className="text-2xl font-semibold leading-7">Localização</h3>
@@ -48,21 +55,36 @@ const Day = () => {
             </button>
           </a>
         </div>
-        <div className="bg-white p-10">
+        <div className="bg-white p-10 col-span-full lg:col-span-1">
           <div className="flex flex-col items-center text-action-400 mb-5">
             <HomeIcon className="h-20 w-20 mb-1" />
             <h3 className="text-2xl font-semibold leading-7">Alojamento</h3>
           </div>
-
           <p>
             Temos algumas opções de Hoteis. Cada um tem um código de desconto
             que poderão utilizar
           </p>
+
+          <ul className="grid divide-y mt-8">
+            {hotels.map(({ name, link, code }) => {
+              return (
+                <li className="flex items-center justify-between py-5">
+                  <a href={link} className="block text-lg pr-2">
+                    {name}
+                  </a>
+                  <p className="inline-block p-2 rounded border text-action-400 border-action-400">
+                    {code}
+                  </p>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 min-h-[60vh]">
+      {/* Bottom Image Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[60vh]">
         <div
-          className="hidden  lg:block bg-cover bg-no-repeat bg-top h-full w-full"
+          className="hidden lg:block bg-cover bg-no-repeat bg-top h-full w-full"
           style={{ backgroundImage: `url(${photo})` }}
         ></div>
         <img src={photo_two} alt="rsvp" className="min-w-full lg:hidden" />
