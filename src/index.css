@@ -14,7 +14,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @apply text-primary-700 font-body;
+}
 
+@layer utilities {
   a {
     @apply text-primary-500 hover:text-action-400 transition-colors;
   }
