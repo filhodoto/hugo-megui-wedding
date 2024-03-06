@@ -1,19 +1,22 @@
 import CountDown from '@/components/CountDown';
 
 const quintaImgUrl = new URL(
-  '../assets/images/quinta_aguarela.png',
+  '../assets/images/quinta_aguarela.jpg',
   import.meta.url
 ).href;
 
 export default function Hero() {
   return (
-    <div id="initial" className="pt-20 md:pt-32 text-center relative">
+    <div id="initial" className="pt-20 md:pt-32 md:pb-20 text-center relative">
       <div className="z-10 px-6 py-6 md:py-12 text-center">
-        <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold leading-tight py-5">
+        <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold leading-tight pb-5 md:pb-11">
           Margarida & Hugo
         </h1>
-        <p className="text-3xl md:text-5xl md:pt-6 text-primary-600">
+        <p className="text-3xl md:text-5xl pb-3 md:pb-6 text-primary-600">
           27 de Julho de 2024
+        </p>
+        <p className="text-lg md:text-2xl text-primary-600">
+          Quinta de São Tadeu
         </p>
       </div>
       {/* TODO:: Clean this. Probably no need for image and div */}

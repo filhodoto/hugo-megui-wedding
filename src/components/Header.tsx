@@ -29,7 +29,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex justify-between items-center w-full border border-sky-500 bg-white text-primary-900">
+    <header className="fixed inset-x-0 top-0 z-50 flex justify-between items-center w-full border border-gray-300 bg-white text-primary-900">
       <div className="flex p-6 sm:px-8 sm:flex-1">
         <a href="#initial" className="-m-1.5 p-1.5" onClick={handleNavClick}>
           Margarida & Hugo
@@ -55,7 +55,7 @@ export default function Header() {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm md:text-base font-semibold leading-6 text-gray-900 hover:text-action-400 transition-all"
+              className="text-sm md:text-base font-semibold leading-6 text-gray-900 transition-all"
               onClick={handleNavClick}
             >
               {item.name}

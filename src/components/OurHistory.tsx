@@ -1,12 +1,13 @@
-const foto = new URL('../assets/images/o_dia.jpg', import.meta.url).href;
+const photo = new URL('../assets/images/a_nossa_historia.jpg', import.meta.url)
+  .href;
 
 export default function OurHistory() {
   return (
     <div
       id="our_history"
-      className="grid xl:grid-cols-2 xl:grid-flow-col gap-x-8 px-6 py-20 md:py-26 md:px-10 relative m-auto min-h-lvh max-w-[90rem]"
+      className="grid xl:grid-cols-2 xl:grid-flow-col gap-x-11 py-20 md:py-26 relative m-auto min-h-lvh"
     >
-      <article className="text-pretty text-lg">
+      <article className="text-pretty sm:text-lg px-6 md:px-8 md:pr-0 xl:pl-20">
         <h2 className="heading-2">A nossa história</h2>
         <p className="py-2">
           Como casal do século XXI que somos, as redes sociais apresentaram-nos
@@ -37,11 +38,15 @@ export default function OurHistory() {
         <p className="py-2">Megui & Hugo</p>
       </article>
       {/* For landscape */}
-      <img src={foto} alt="our history" className="pt-9 xl:hidden" />
-      <div className="hidden pt-9 min-h-96 xl:block ">
+      <img
+        src={photo}
+        alt="our history"
+        className="pt-9 min-w-full xl:hidden"
+      />
+      <div className="hidden min-h-96 xl:block ">
         <div
-          className="bg-cover xl:bg-cover bg-no-repeat bg-top h-full w-full"
-          style={{ backgroundImage: `url(${foto})` }}
+          className="bg-cover bg-no-repeat bg-top h-full w-full"
+          style={{ backgroundImage: `url(${photo})` }}
         ></div>
       </div>
     </div>
