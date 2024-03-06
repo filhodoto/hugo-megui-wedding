@@ -5,7 +5,7 @@ export default function RSVP() {
   return (
     <div
       id="rsvp"
-      className="grid lg:grid-cols-2 lg:grid-flow-col gap-x-11 py-20 md:py-26 relative m-auto"
+      className="grid lg:grid-cols-2 lg:grid-flow-col gap-x-11 py-20 md:py-26 relative m-auto min-h-lvh"
     >
       {/* For landscape */}
       <img src={foto} alt="rsvp" className="pt-9 min-w-full lg:hidden" />

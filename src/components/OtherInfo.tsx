@@ -7,7 +7,7 @@ const OtherInfo = () => {
   return (
     <div
       id="other_info"
-      className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 py-20 md:py-26 m-auto"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 py-20 md:py-26 m-auto min-h-lvh"
     >
       {/* Cell 1 */}
       <div className="px-6 md:px-8 md:pr-0 xl:pl-20">
