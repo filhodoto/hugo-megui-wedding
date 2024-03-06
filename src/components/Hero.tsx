@@ -1,7 +1,7 @@
 import CountDown from '@/components/CountDown';
 
 const quintaImgUrl = new URL(
-  '../assets/images/quinta_aguarela.png',
+  '../assets/images/quinta_aguarela.jpg',
   import.meta.url
 ).href;
 

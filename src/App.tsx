@@ -4,6 +4,7 @@ import OurHistory from '@components/OurHistory';
 import RSVP from '@components/RSVP';
 import Day from '@components/Day';
 import OtherInfo from '@components/OtherInfo';
+import Footer from '@components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Day />
       <RSVP />
       <OtherInfo />
+      <Footer />
     </div>
   );
 }
