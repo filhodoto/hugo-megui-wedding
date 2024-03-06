@@ -1,4 +1,4 @@
-import Suite from '@/assets/Icons/Suit';
+import Suit from '@/assets/Icons/Suit';
 import { GiftIcon } from '@heroicons/react/24/outline';
 
 const photo = new URL('../assets/images/other_info.jpg', import.meta.url).href;
@@ -33,7 +33,7 @@ const OtherInfo = () => {
             </p>
           </div>
           <div className="flex flex-col sm:items-center sm:content-center">
-            <Suite className="h-20 w-20 mb-6 text-action-400 fill-current" />
+            <Suit className="h-20 w-20 mb-6 text-action-400 fill-current" />
             <div className="text-2xl font-semibold leading-7">Dress Code</div>
             <p className="mt-2 text-lg leading-7">Formal</p>
           </div>
