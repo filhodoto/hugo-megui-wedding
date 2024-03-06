@@ -7,7 +7,7 @@ export default function OurHistory() {
       id="our_history"
       className="grid xl:grid-cols-2 xl:grid-flow-col gap-x-11 py-20 md:py-26 relative m-auto min-h-lvh"
     >
-      <article className="text-pretty text-lg px-6 md:px-8 md:pr-0 xl:pl-20">
+      <article className="text-pretty sm:text-lg px-6 md:px-8 md:pr-0 xl:pl-20">
         <h2 className="heading-2">A nossa história</h2>
         <p className="py-2">
           Como casal do século XXI que somos, as redes sociais apresentaram-nos
