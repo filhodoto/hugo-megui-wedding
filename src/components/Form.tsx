@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useWeb3Forms from '@web3forms/react';
-import Loader from '@/assets/Icons/Loader';
+import Loader from '@/assets/icons/Loader';
 interface FormProps {
   name: string;
   attendance: 'sim' | 'nao';

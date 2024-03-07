@@ -1,4 +1,4 @@
-import Suit from '@/assets/Icons/Suit';
+import Suit from '@/assets/icons/Suit';
 import { GiftIcon } from '@heroicons/react/24/outline';
 
 const photo = new URL('../assets/images/other_info.jpg', import.meta.url).href;

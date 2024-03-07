@@ -1,4 +1,4 @@
-import Parking from '@/assets/Icons/Parking';
+import Parking from '@/assets/icons/Parking';
 import { HomeIcon, MapIcon } from '@heroicons/react/24/outline';
 const photo = new URL('../assets/images/day_1.jpg', import.meta.url).href;
 const photo_two = new URL('../assets/images/day_2.jpg', import.meta.url).href;
