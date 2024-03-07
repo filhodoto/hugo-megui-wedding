@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useWeb3Forms from '@web3forms/react';
-import Loader from '@/assets/Icons/Loader';
+import Loader from '@/assets/icons/Loader';
 interface FormProps {
   name: string;
   attendance: 'sim' | 'nao';
@@ -128,7 +128,7 @@ const Form = (): JSX.Element => {
             htmlFor="people"
             className="block font-semibold leading-6 text-primary-700"
           >
-            Numero de pessoas <span className="text-xs">(adultos)</span>
+            Número de pessoas <span className="text-xs">(adultos)</span>
           </label>
           <div className="relative mt-2.5">
             <input

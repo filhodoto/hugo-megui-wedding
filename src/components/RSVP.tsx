@@ -17,12 +17,12 @@ export default function RSVP() {
       <div className="px-6 md:px-8 lg:pl-0 xl:pr-20">
         <h2 className="heading-2">RSVP</h2>
         <p className="text-lg max-w-xl sm:text-xl ">
-          Queremos muito contar convosco neste nosso dia, esperamos as vossas
-          confirmações até dia{' '}
+          Queremos muito contar convosco neste nosso dia! Esperamos as vossas
+          confirmações até ao dia{' '}
           <span className="sm:text-2xl font-bold text-action-400">
             1 de Junho de 2024
           </span>
-          .
+          , utilizando o formulário abaixo, ou através dos nossos contactos.
         </p>
         <Form />
       </div>
