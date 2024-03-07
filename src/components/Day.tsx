@@ -61,6 +61,23 @@ const locations: Location[] = [
   },
 ];
 
+const parkings = [
+  {
+    location: 'Igreja',
+    description:
+      'Estacionamento de terra batida, com espaço para dezenas de viaturas, a 150 metros da Igreja.',
+    address: 'Rua da Abreja, Colares (junto aos nº 22 e 24)',
+    link: 'https://maps.app.goo.gl/LFb544zkJgY1aA2D8',
+  },
+  {
+    location: 'Quinta de São Tadeu',
+    description:
+      'Estacionamento de terra batida, com espaço para dezenas de viaturas, junto à Quinta.',
+    address: 'Rua Carlos Massett, Sintra',
+    link: 'https://maps.app.goo.gl/mCirU7wDBdZh576Y7',
+  },
+];
+
 const Day = () => {
   return (
     <div id="day" className="py-20 md:py-26 relative min-h-lvh">
@@ -83,10 +100,27 @@ const Day = () => {
               Estacionamento
             </h3>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-            alias sequi natus tempora adipisci eum hic dicta.
-          </p>
+          <ul className="divide-y w-full xl:w-auto">
+            {parkings.map((item) => {
+              const { location, description, link, address } = item;
+              return (
+                <li key={link} className="py-7">
+                  <p className="text-xl">{location}</p>
+                  <p className="pt-3">{description}</p>
+                  {/* <p className="text-lg">{address}</p> */}
+                  <a href={link} target="_blank" className="mt-3 flex">
+                    <MapPinIcon className="h-5 w-5 mr-1" />
+                    {address}
+                  </a>
+                  <a className="inline-block" target="_blank" href={link}>
+                    <button className="block rounded-md bg-action-400 px-3 py-2 mt-4 text-center text-sm font-semibold text-white shadow-sm hover:bg-action-500 ">
+                      Abrir no Maps
+                    </button>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </div>
         {/* Location */}
         <div className="bg-white p-10 col-span-full flex flex-col items-center sm:col-span-1">
