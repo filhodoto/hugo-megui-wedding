@@ -17,8 +17,8 @@ const Day = () => {
       <article className="text-pretty sm:text-center px-6 md:px-8 ">
         <h2 className="heading-2 ">O Dia</h2>
         <p className="text-lg sm:text-xl ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias
-          sequi natus tempora adipisci eum hic dicta.
+          Para que estejam o mais relaxados possível num dia que tem tudo para
+          ser único
         </p>
       </article>
       <img src={photo} alt="rsvp" className="mt-12 min-w-full lg:hidden" />
@@ -63,8 +63,8 @@ const Day = () => {
             <h3 className="text-2xl font-semibold leading-7 ">Alojamento</h3>
           </div>
           <p>
-            Temos algumas opções de Hoteis. Cada um tem um código de desconto
-            que poderão utilizar
+            Deixamos aqui as nossas sugestões de hotéis com código de desconto
+            que poderão utilizar ao fazer a reserva.
           </p>
 
           <ul className="grid divide-y mt-8">
