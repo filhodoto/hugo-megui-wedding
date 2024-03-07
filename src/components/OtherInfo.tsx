@@ -1,5 +1,6 @@
+import Dress from '@/assets/icons/Dress';
 import Suit from '@/assets/icons/Suit';
-import { GiftIcon } from '@heroicons/react/24/outline';
+import { GiftIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 const photo = new URL('../assets/images/other_info.jpg', import.meta.url).href;
 
@@ -14,7 +15,7 @@ const OtherInfo = () => {
         <h2 className="heading-2 sm:text-center mb-8 sm:mb-16">
           Outras Informações
         </h2>
-        <div className="grid grid-cols-1 gap-12 sm:gap-6 md:grid-cols-2 mb-6 sm:text-center">
+        <div className="grid grid-cols-1 gap-12 sm:gap-6 md:grid-cols-2 md:gap-y-11 mb-6 sm:text-center">
           <div className="flex flex-col sm:items-center sm:content-center">
             <GiftIcon
               className="h-20 w-20 mb-6 text-action-400"
@@ -33,7 +34,23 @@ const OtherInfo = () => {
             </p>
           </div>
           <div className="flex flex-col sm:items-center sm:content-center">
-            <Suit className="h-20 w-20 mb-6 text-action-400 fill-current" />
+            <PhoneIcon className="h-16 w-16 mb-6 text-action-400 fill-current" />
+            <div className="text-2xl font-semibold leading-7">Contactos</div>
+            <ul className="mt-2 text-lg leading-7">
+              <li className="pb-1">
+                Ana Margarida Jorge:{' '}
+                <a href="tel:00351918231306">+351 918 231 306</a>
+              </li>
+              <li className="pb-1">
+                Hugo Viegas: <a href="tel:00351918904928">+351 918 904 928</a>
+              </li>
+            </ul>
+          </div>
+          <div className="flex flex-col sm:items-center sm:content-center">
+            <div className="flex  mb-6">
+              <Suit className="h-20 w-20 text-action-400 fill-current px-1" />
+              <Dress className="h-20 w-20  text-action-400 fill-current px-1" />
+            </div>
             <div className="text-2xl font-semibold leading-7">Dress Code</div>
             <p className="mt-2 text-lg leading-7">Formal</p>
           </div>
