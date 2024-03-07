@@ -10,25 +10,25 @@ const hotels = [
     name: 'Hotel Vila Galé Sintra',
     code: 'Ana&Hugo',
     description:
-      'Código para 10% de desconto (apenas para a noite de 27/28 de julho)',
+      'Código para 10% de desconto (apenas para a noite de 27/28 de Julho)',
     link: 'https://www.vilagale.com/br/hoteis/costa-de-lisboa/vila-gale-sintra',
   },
   {
     name: 'NH Sintra Centro',
     code: 'NHTSINWED',
     description:
-      'Código para 15% de desconto (mínimo 2 noites entre 25 e 29 de julho)',
+      'Código para 15% de desconto (mínimo 2 noites entre 25 e 29 de Julho)',
     link: 'https://www.nh-hotels.com/pt/hotel/nh-sintra',
   },
   {
     name: 'Pestana Sintra Golf',
-    code: 'SJRO12FKL3',
+    code: 'MISSING_CODE',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     link: 'https://www.pestana.com/pt/hotel/pestana-sintra',
   },
   {
     name: 'Sintra Boutique Hotel',
-    code: 'SJRO12FK',
+    code: 'MISSING_CODE',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     link: 'https://sintraboutiquehotel.com/',
   },
@@ -91,9 +91,36 @@ const Day = () => {
       <img src={photo} alt="rsvp" className="mt-12 min-w-full lg:hidden" />
 
       {/* Info Grid */}
-      <div className="grid grid-cols-2 gap-8 lg:gap-12 lg:grid-cols-3 min-h-[60vh] px-8 py-12 lg:mt-12 bg-action-50/75">
+      <div className="grid grid-cols-2 gap-8 lg:gap-12 xl:grid-cols-3 min-h-[60vh] px-8 py-12 lg:mt-12 bg-action-50/75">
+        {/* Location */}
+        <div className="bg-white p-10 col-span-full flex flex-col items-center sm:col-span-1">
+          <div className="flex flex-col text-center items-center mb-5 sm:mb-5">
+            <MapIcon className="h-20 w-20 mb-2 text-action-400" />
+            <h3 className="text-2xl font-semibold leading-7 ">Localização</h3>
+          </div>
+          <ul className="divide-y w-full xl:w-auto">
+            {locations.map((item) => {
+              const { event, location, time, link, address } = item;
+              return (
+                <li key={event} className="py-7">
+                  <div className="flex items-end pb-3">
+                    <item.icon className="h-12 w-12 fill-current mr-2 text-action-400" />
+                    <p className="text-2xl">{event}</p>
+                  </div>
+                  <p className="text-xl">{location}</p>
+                  {time && <p className="text-lg pt-1">Horas: {time}</p>}
+                  <a href={link} target="_blank" className="mt-2 flex">
+                    <MapPinIcon className="h-5 w-5 mr-1" />
+                    {address}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
         {/* Parking */}
-        <div className="bg-white p-10 col-span-full	 sm:col-span-1">
+        <div className="bg-white p-10 col-span-full	 sm:col-span-1 xl:-order-1">
           <div className="flex flex-col items-center  mb-5 sm:mb-8">
             <Parking className="h-20 w-20 mb-2 fill-current text-action-400" />
             <h3 className="text-2xl font-semibold leading-7 ">
@@ -122,34 +149,8 @@ const Day = () => {
             })}
           </ul>
         </div>
-        {/* Location */}
-        <div className="bg-white p-10 col-span-full flex flex-col items-center sm:col-span-1">
-          <div className="flex flex-col text-center items-center mb-5 sm:mb-5">
-            <MapIcon className="h-20 w-20 mb-2 text-action-400" />
-            <h3 className="text-2xl font-semibold leading-7 ">Localização</h3>
-          </div>
-          <ul className="divide-y w-full xl:w-auto">
-            {locations.map((item) => {
-              const { event, location, time, link, address } = item;
-              return (
-                <li key={event} className="py-7">
-                  <div className="flex items-end pb-3">
-                    <item.icon className="h-12 w-12 fill-current mr-2 text-action-400" />
-                    <p className="text-2xl">{event}</p>
-                  </div>
-                  <p className="text-xl">{location}</p>
-                  {time && <p className="text-lg pt-1">Horas: {time}</p>}
-                  <a href={link} target="_blank" className="mt-2 flex">
-                    <MapPinIcon className="h-5 w-5 mr-1" />
-                    {address}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
         {/* Alojamento */}
-        <div className="bg-white p-10 col-span-full lg:col-span-1">
+        <div className="bg-white p-10 col-span-full xl:col-span-1">
           <div className="flex flex-col items-center t mb-5 sm:mb-8">
             <HomeIcon className="h-20 w-20 mb-2 text-action-400" />
             <h3 className="text-2xl font-semibold leading-7 ">Alojamento</h3>
@@ -164,9 +165,9 @@ const Day = () => {
               return (
                 <li
                   key={code}
-                  className="flex items-center justify-between py-5"
+                  className="flex flex-col items-start sm:flex-row sm:items-center sm:justify-between py-5"
                 >
-                  <div className="pr-3">
+                  <div className="mb-4 sm:mb-0 sm:pr-3">
                     <a href={link} className="inline-block text-lg pb-1">
                       {name}
                     </a>
