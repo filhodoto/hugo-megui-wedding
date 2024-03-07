@@ -6,9 +6,32 @@ const photo_two = new URL('../assets/images/day_2.jpg', import.meta.url).href;
 const mapsLink = 'https://maps.app.goo.gl/P8mh7THzE61Nva4V9';
 
 const hotels = [
-  { name: 'Hotel Vila Galé Sintra', code: 'SJRO12FKLd', link: '#' },
-  { name: 'NH Sintra Centro', code: 'SJRO12FKL2', link: '#' },
-  { name: 'Pestana Sintra Golf', code: 'SJRO12FKL3', link: '#' },
+  {
+    name: 'Hotel Vila Galé Sintra',
+    code: 'Ana&Hugo',
+    description:
+      'Código para 10% de desconto (apenas para a noite de 27/28 de julho)',
+    link: 'https://www.vilagale.com/br/hoteis/costa-de-lisboa/vila-gale-sintra',
+  },
+  {
+    name: 'NH Sintra Centro',
+    code: 'NHTSINWED',
+    description:
+      'Código para 15% de desconto (mínimo 2 noites entre 25 e 29 de julho)',
+    link: 'https://www.nh-hotels.com/pt/hotel/nh-sintra',
+  },
+  {
+    name: 'Pestana Sintra Golf',
+    code: 'SJRO12FKL3',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    link: 'https://www.pestana.com/pt/hotel/pestana-sintra',
+  },
+  {
+    name: 'Sintra Boutique Hotel',
+    code: 'SJRO12FK',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    link: 'https://sintraboutiquehotel.com/',
+  },
 ];
 
 const Day = () => {
@@ -25,6 +48,7 @@ const Day = () => {
 
       {/* Info Grid */}
       <div className="grid grid-cols-2 gap-8 lg:gap-12 lg:grid-cols-3 min-h-[60vh] px-8 py-12 lg:mt-12 bg-action-50/75">
+        {/* Parking */}
         <div className="bg-white p-10 col-span-full	 sm:col-span-1">
           <div className="flex flex-col items-center  mb-5 sm:mb-8">
             <Parking className="h-20 w-20 mb-2 fill-current text-action-400" />
@@ -37,6 +61,7 @@ const Day = () => {
             alias sequi natus tempora adipisci eum hic dicta.
           </p>
         </div>
+        {/* Location */}
         <div className="bg-white p-10 col-span-full	 text-center flex flex-col items-center sm:col-span-1">
           <div className="flex flex-col items-center mb-5 sm:mb-8">
             <MapIcon className="h-20 w-20 mb-2 text-action-400" />
@@ -57,6 +82,7 @@ const Day = () => {
             </button>
           </a>
         </div>
+        {/* Alojamento */}
         <div className="bg-white p-10 col-span-full lg:col-span-1">
           <div className="flex flex-col items-center t mb-5 sm:mb-8">
             <HomeIcon className="h-20 w-20 mb-2 text-action-400" />
@@ -68,18 +94,21 @@ const Day = () => {
           </p>
 
           <ul className="grid divide-y mt-8">
-            {hotels.map(({ name, link, code }) => {
+            {hotels.map(({ name, link, code, description }) => {
               return (
                 <li
                   key={code}
                   className="flex items-center justify-between py-5"
                 >
-                  <a href={link} className="block text-lg pr-2">
-                    {name}
-                  </a>
-                  <p className="inline-block p-2 rounded border text-action-400 border-action-400">
+                  <div className="pr-3">
+                    <a href={link} className="inline-block text-lg pb-1">
+                      {name}
+                    </a>
+                    <p className="text-sm">{description}</p>
+                  </div>
+                  <span className="inline-block p-2 rounded border text-action-400 border-action-400">
                     {code}
-                  </p>
+                  </span>
                 </li>
               );
             })}
