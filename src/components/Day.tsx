@@ -6,9 +6,9 @@ const photo_two = new URL('../assets/images/day_2.jpg', import.meta.url).href;
 const mapsLink = 'https://maps.app.goo.gl/P8mh7THzE61Nva4V9';
 
 const hotels = [
-  { name: 'Hotel Vila Galé Sintra', code: 'SJRO12FKL', link: '#' },
-  { name: 'NH Sintra Centro', code: 'SJRO12FKL', link: '#' },
-  { name: 'Pestana Sintra Golf', code: 'SJRO12FKL', link: '#' },
+  { name: 'Hotel Vila Galé Sintra', code: 'SJRO12FKLd', link: '#' },
+  { name: 'NH Sintra Centro', code: 'SJRO12FKL2', link: '#' },
+  { name: 'Pestana Sintra Golf', code: 'SJRO12FKL3', link: '#' },
 ];
 
 const Day = () => {
@@ -70,7 +70,10 @@ const Day = () => {
           <ul className="grid divide-y mt-8">
             {hotels.map(({ name, link, code }) => {
               return (
-                <li className="flex items-center justify-between py-5">
+                <li
+                  key={code}
+                  className="flex items-center justify-between py-5"
+                >
                   <a href={link} className="block text-lg pr-2">
                     {name}
                   </a>
