@@ -1,9 +1,9 @@
+import Church from '@/assets/icons/Church';
 import Parking from '@/assets/icons/Parking';
-import { HomeIcon, MapIcon } from '@heroicons/react/24/outline';
+import Party from '@/assets/icons/Party';
+import { HomeIcon, MapIcon, MapPinIcon } from '@heroicons/react/24/outline';
 const photo = new URL('../assets/images/day_1.jpg', import.meta.url).href;
 const photo_two = new URL('../assets/images/day_2.jpg', import.meta.url).href;
-
-const mapsLink = 'https://maps.app.goo.gl/P8mh7THzE61Nva4V9';
 
 const hotels = [
   {
@@ -31,6 +31,33 @@ const hotels = [
     code: 'SJRO12FK',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     link: 'https://sintraboutiquehotel.com/',
+  },
+];
+
+interface Location {
+  event: string;
+  location: string;
+  time?: string;
+  link: string;
+  address: string;
+  icon: typeof Parking;
+}
+
+const locations: Location[] = [
+  {
+    event: 'Cerimónia',
+    location: 'Igreja Matriz / Paroquial de Colares',
+    address: 'Largo Dr. Carlos França, 2705-192 Colares',
+    time: '14h',
+    link: 'https://maps.app.goo.gl/iMd3UH8TwJaSgtHJ9',
+    icon: Church,
+  },
+  {
+    event: 'Cocktail e Jantar',
+    location: 'Quinta de São Tadeu',
+    address: 'Rua Carlos Massett, 2710-221 Sintra',
+    link: 'https://maps.app.goo.gl/P8mh7THzE61Nva4V9',
+    icon: Party,
   },
 ];
 
@@ -62,25 +89,30 @@ const Day = () => {
           </p>
         </div>
         {/* Location */}
-        <div className="bg-white p-10 col-span-full	 text-center flex flex-col items-center sm:col-span-1">
-          <div className="flex flex-col items-center mb-5 sm:mb-8">
+        <div className="bg-white p-10 col-span-full flex flex-col items-center sm:col-span-1">
+          <div className="flex flex-col text-center items-center mb-5 sm:mb-5">
             <MapIcon className="h-20 w-20 mb-2 text-action-400" />
             <h3 className="text-2xl font-semibold leading-7 ">Localização</h3>
           </div>
-          <p className="text-3xl">Quinta de São Tadeu</p>
-          <a href={mapsLink} target="_blank" className="mt-3 italic">
-            R. Carlos Massett, 2710-221 Sintra
-          </a>
-          <hr className="border border-primary-200 w-full max-w-12 mt-6 mb-5" />
-          <p className="text-xl pb-1">
-            27 de Julho de 2024 <br />
-            14h
-          </p>
-          <a className="inline-block" target="_blank" href={mapsLink}>
-            <button className="block rounded-md bg-action-400 px-3.5 py-2.5 mt-8 text-center font-semibold text-white shadow-sm hover:bg-action-500 ">
-              Ver no Maps
-            </button>
-          </a>
+          <ul className="divide-y w-full xl:w-auto">
+            {locations.map((item) => {
+              const { event, location, time, link, address } = item;
+              return (
+                <li key={event} className="py-7">
+                  <div className="flex items-end pb-3">
+                    <item.icon className="h-12 w-12 fill-current mr-2 text-action-400" />
+                    <p className="text-2xl">{event}</p>
+                  </div>
+                  <p className="text-xl">{location}</p>
+                  {time && <p className="text-lg pt-1">Horas: {time}</p>}
+                  <a href={link} target="_blank" className="mt-2 flex">
+                    <MapPinIcon className="h-5 w-5 mr-1" />
+                    {address}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </div>
         {/* Alojamento */}
         <div className="bg-white p-10 col-span-full lg:col-span-1">
