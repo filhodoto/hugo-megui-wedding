@@ -29,15 +29,15 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex justify-between items-center w-full border border-gray-300 bg-white text-primary-900">
-      <div className="flex p-6 sm:px-8 sm:flex-1">
+    <header className="fixed inset-x-0 top-0 z-50 flex justify-between items-center w-full  border-gray-300 bg-white text-primary-900">
+      <div className="flex py-6 sm:px-8 xl:px-20 sm:flex-1">
         <a href="#initial" className="-m-1.5 p-1.5" onClick={handleNavClick}>
           Margarida & Hugo
         </a>
       </div>
       {/* Desktop Menu */}
       <nav
-        className="flex items-center justify-between p-6 sm:px-8"
+        className="flex items-center justify-between p-6 sm:px-8 xl:px-20"
         aria-label="Global"
       >
         <div className="flex sm:hidden">
