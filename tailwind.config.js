@@ -2,7 +2,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors');
-
+/* #78614c
+#9c8476
+#bcaca3 */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -10,6 +12,7 @@ export default {
       colors: {
         action: colors.red,
         primary: colors.gray,
+        headings: '#78614c',
       },
       fontFamily: {
         heading: ['"Noto Serif"', 'cursive'],
