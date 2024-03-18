@@ -126,7 +126,9 @@ const Form = (): JSX.Element => {
         <div>
           <label
             htmlFor="people"
-            className="block font-semibold leading-6 text-primary-700"
+            className={`block font-semibold leading-6 ${
+              isAttending ? 'text-primary-700' : 'text-primary-400'
+            }`}
           >
             Número de pessoas <span className="text-xs">(adultos)</span>
           </label>
@@ -153,7 +155,9 @@ const Form = (): JSX.Element => {
         <div className="sm:col-span-2">
           <label
             htmlFor="kids"
-            className="block font-semibold leading-6 text-primary-700"
+            className={`block font-semibold leading-6 ${
+              isAttending ? 'text-primary-700' : 'text-primary-400'
+            }`}
           >
             Levo crianças{' '}
             <span className="text-xs">
@@ -176,7 +180,9 @@ const Form = (): JSX.Element => {
         <div className="sm:col-span-2">
           <label
             htmlFor="food-restrictions"
-            className="block font-semibold leading-6 text-primary-700"
+            className={`block font-semibold leading-6 ${
+              isAttending ? 'text-primary-700' : 'text-primary-400'
+            }`}
           >
             Restrições alimentares{' '}
             <span className="text-xs">
