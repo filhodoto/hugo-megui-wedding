@@ -9,20 +9,20 @@ const headingText = new URL('../assets/images/megs_hugo.svg', import.meta.url)
 
 export default function Hero() {
   return (
-    <div
-      id="initial"
-      className="pt-20 md:pt-32 md:pb-20 text-center relative border"
-    >
+    <div id="initial" className="pt-20 md:pt-32 md:pb-20 text-center relative">
       <div className="z-10 px-6 py-6 md:py-12 text-center">
         <img
           src={headingText}
           alt="Margarida & Hugo"
           className="md:max-w-7xl mx-auto z-0 w-full"
         />
-        <p className="text-2xl sm:text-4xl md:text-5xl pt-5 pb-2 md:pb-6 text-headings">
+        <p className="font-heading pt-5 text-xl md:text-3xl xl:text-4xl text-headings">
           27 de Julho de 2024
         </p>
-        <p className="text-lg md:text-2xl text-headings">Quinta de São Tadeu</p>
+        <span className="max-w-20 sm:max-w-60 h-px sm:h-0.5 my-5 sm:my-10 block m-auto bg-headings opacity-55"></span>
+        <p className="font-heading pb-2 font-medium text-2xl sm:text-4xl md:text-4xl xl:text-5xl text-headings">
+          QUINTA DE SÃO TADEU
+        </p>
       </div>
       {/* TODO:: Clean this. Probably no need for image and div */}
       <img
