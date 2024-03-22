@@ -58,8 +58,8 @@ const Form = (): JSX.Element => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-8 sm:mt-12">
-      <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 mb-6">
-        <div className="sm:col-span-2">
+      <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 mb-12 xl:mb-12">
+        <div className="sm:col-span-2 2xl:sm:col-span-1">
           <label
             htmlFor="name"
             className="block font-semibold leading-6 text-primary-700"
@@ -85,7 +85,7 @@ const Form = (): JSX.Element => {
             )}
           </div>
         </div>
-        <div>
+        <div className="2xl:sm:col-span-1 2xl:col-start-1">
           <label
             htmlFor="attendance"
             className="block font-semibold leading-6 text-primary-700"
@@ -123,10 +123,12 @@ const Form = (): JSX.Element => {
             )}
           </div>
         </div>
-        <div>
+        <div className="2xl:col-start-2 2xl:row-start-1">
           <label
             htmlFor="people"
-            className="block font-semibold leading-6 text-primary-700"
+            className={`block font-semibold leading-6 ${
+              isAttending ? 'text-primary-700' : 'text-primary-400'
+            }`}
           >
             Número de pessoas <span className="text-xs">(adultos)</span>
           </label>
@@ -150,10 +152,12 @@ const Form = (): JSX.Element => {
             )}
           </div>
         </div>
-        <div className="sm:col-span-2">
+        <div className="sm:col-span-2 2xl:col-start-2 2xl:sm:col-span-1">
           <label
             htmlFor="kids"
-            className="block font-semibold leading-6 text-primary-700"
+            className={`block font-semibold leading-6 ${
+              isAttending ? 'text-primary-700' : 'text-primary-400'
+            }`}
           >
             Levo crianças{' '}
             <span className="text-xs">
@@ -173,10 +177,12 @@ const Form = (): JSX.Element => {
             />
           </div>
         </div>
-        <div className="sm:col-span-2">
+        <div className="sm:col-span-2 ">
           <label
             htmlFor="food-restrictions"
-            className="block font-semibold leading-6 text-primary-700"
+            className={`block font-semibold leading-6 ${
+              isAttending ? 'text-primary-700' : 'text-primary-400'
+            }`}
           >
             Restrições alimentares{' '}
             <span className="text-xs">
@@ -191,36 +197,36 @@ const Form = (): JSX.Element => {
               name="food-restrictions"
               id="food-restrictions"
               rows={2}
-              className="form-input"
+              className="form-input min-h-12 max-h-60"
               defaultValue={''}
             />
           </div>
         </div>
       </div>
 
-      {/* Show alert after submitting form */}
-      {isSubmitSuccessful && (
-        <div
-          className={`mb-6 px-4 py-3 rounded relative text-xs  ${
-            isSuccess
-              ? 'bg-green-100  text-green-600'
-              : 'bg-red-100  text-red-600'
-          }`}
-          role="alert"
-        >
-          <span className="block sm:inline">
-            {formResult ||
-              (isSuccess
-                ? 'Message sent successfully'
-                : 'Something went wrong. Please try later.')}
-          </span>
-        </div>
-      )}
+      <div className="grid grid-cols-2">
+        {/* Show alert after submitting form */}
+        {isSubmitSuccessful && (
+          <div
+            className={`row-start-1 col-span-2 2xl:col-span-1 mb-6 px-4 py-3 rounded relative text-xs  ${
+              isSuccess
+                ? 'bg-green-100  text-green-600'
+                : 'bg-red-100  text-red-600'
+            }`}
+            role="alert"
+          >
+            <span className="block sm:inline">
+              {formResult ||
+                (isSuccess
+                  ? 'Message sent successfully'
+                  : 'Something went wrong. Please try later.')}
+            </span>
+          </div>
+        )}
 
-      <div>
         <button
           type="submit"
-          className="block w-full rounded-md bg-action-400 px-3.5 py-2.5 text-center font-semibold text-white shadow-sm hover:bg-action-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+          className="block col-span-2 xl:col-span-1 row-start-2 rounded-md bg-action-400 px-3.5 py-2.5 text-center font-semibold text-white shadow-sm hover:bg-action-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
         >
           {isSubmitting ? <Loader /> : 'Enviar RSVP'}
         </button>

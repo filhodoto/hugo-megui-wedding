@@ -4,19 +4,24 @@ const quintaImgUrl = new URL(
   '../assets/images/quinta_aguarela.jpg',
   import.meta.url
 ).href;
+const headingText = new URL('../assets/images/megs_hugo.svg', import.meta.url)
+  .href;
 
 export default function Hero() {
   return (
     <div id="initial" className="pt-20 md:pt-32 md:pb-20 text-center relative">
       <div className="z-10 px-6 py-6 md:py-12 text-center">
-        <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold leading-tight pb-5 md:pb-11">
-          Margarida & Hugo
-        </h1>
-        <p className="text-3xl md:text-5xl pb-3 md:pb-6 text-primary-600">
+        <img
+          src={headingText}
+          alt="Margarida & Hugo"
+          className="md:max-w-7xl mx-auto z-0 w-full"
+        />
+        <p className="font-heading pt-5 text-xl md:text-3xl xl:text-4xl text-headings">
           27 de Julho de 2024
         </p>
-        <p className="text-lg md:text-2xl text-primary-600">
-          Quinta de São Tadeu
+        <span className="max-w-20 sm:max-w-60 h-px sm:h-0.5 my-5 sm:my-10 block m-auto bg-headings opacity-55"></span>
+        <p className="font-heading pb-2 font-medium text-2xl sm:text-4xl md:text-4xl xl:text-5xl text-headings">
+          QUINTA DE SÃO TADEU
         </p>
       </div>
       {/* TODO:: Clean this. Probably no need for image and div */}

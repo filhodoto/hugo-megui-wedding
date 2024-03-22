@@ -15,7 +15,7 @@ const OtherInfo = () => {
         <h2 className="heading-2 sm:text-center mb-8 sm:mb-16">
           Outras Informações
         </h2>
-        <div className="grid grid-cols-1 gap-12 sm:gap-6 md:grid-cols-2 md:gap-y-11 mb-6 sm:text-center">
+        <div className="grid grid-cols-1 gap-12 sm:gap-6 md:grid-cols-2 md:gap-y-16 mb-6 sm:text-center">
           <div className="flex flex-col sm:items-center sm:content-center">
             <GiftIcon
               className="h-20 w-20 mb-6 text-action-400"
@@ -47,7 +47,7 @@ const OtherInfo = () => {
             </ul>
           </div>
           <div className="flex flex-col sm:items-center sm:content-center">
-            <div className="flex  mb-6">
+            <div className="flex mb-6">
               <Suit className="h-20 w-20 text-action-400 fill-current px-1" />
               <Dress className="h-20 w-20  text-action-400 fill-current px-1" />
             </div>
