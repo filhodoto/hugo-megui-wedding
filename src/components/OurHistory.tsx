@@ -5,7 +5,7 @@ export default function OurHistory() {
   return (
     <div
       id="our_history"
-      className="grid xl:grid-cols-2 xl:grid-flow-col gap-x-11 py-20 md:py-26 relative m-auto min-h-lvh"
+      className="grid xl:grid-cols-2 xl:grid-flow-col gap-x-11 lg:pt-40 relative m-auto min-h-lvh"
     >
       <article className="text-pretty sm:text-lg px-6 md:px-8 md:pr-0 xl:pl-20">
         <h2 className="heading-2">A nossa história</h2>

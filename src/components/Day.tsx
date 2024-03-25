@@ -80,7 +80,7 @@ const parkings = [
 
 const Day = () => {
   return (
-    <div id="day" className="py-20 md:py-26 relative min-h-lvh">
+    <div id="day" className="lg:pt-40 relative min-h-lvh">
       <article className="text-pretty sm:text-center px-6 md:px-8 ">
         <h2 className="heading-2 ">O Dia</h2>
         <p className="text-lg sm:text-xl ">
