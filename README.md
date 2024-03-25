@@ -1,30 +1,13 @@
-# React + TypeScript + Vite
+# Hugo & Margarida wedding website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Created from a [React + TypeScript + Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) template which _"provides a minimal setup to get React working in Vite with HMR and some ESLint rules"_.
 
-Currently, two official plugins are available:
+## About
+The website serves as guide to the upcoming wedding. 
+<br />It holds all the important details about the ceremony, reception, and some helpful tips for our out-of-town guests. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Built with
+- React
+- Typescript
+- [Tailwind](https://tailwindcss.com/)
+- [Web3Froms](https://web3forms.com/)
