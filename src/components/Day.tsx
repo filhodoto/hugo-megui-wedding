@@ -111,7 +111,7 @@ const Day = () => {
                   <p className="text-xl">{location}</p>
                   {time && <p className="text-lg pt-1">Horas: {time}</p>}
                   <a href={link} target="_blank" className="mt-2 flex">
-                    <MapPinIcon className="h-5 w-5 mr-1" />
+                    <MapPinIcon className="size-5 mr-1" />
                     {address}
                   </a>
                 </li>
@@ -137,7 +137,7 @@ const Day = () => {
                   <p className="pt-3">{description}</p>
                   {/* <p className="text-lg">{address}</p> */}
                   <a href={link} target="_blank" className="mt-3 flex">
-                    <MapPinIcon className="h-5 w-5 mr-1" />
+                    <MapPinIcon className="size-5 mr-1" />
                     {address}
                   </a>
                   <a className="inline-block" target="_blank" href={link}>
