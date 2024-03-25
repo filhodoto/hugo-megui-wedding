@@ -3,7 +3,7 @@ const Footer = (): JSX.Element => {
   const year = d.getFullYear();
   return (
     <footer>
-      <div className="container m-auto text-center mt-3">
+      <div className="container m-auto text-center mt-6">
         <p className="text-xs leading-5 text-gray-500">
           &copy; Copyright{' '}
           <a

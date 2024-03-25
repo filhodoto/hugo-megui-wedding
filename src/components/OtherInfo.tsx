@@ -8,7 +8,7 @@ const OtherInfo = () => {
   return (
     <div
       id="other_info"
-      className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 py-20 md:py-26 m-auto min-h-lvh"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:pt-40 m-auto min-h-lvh"
     >
       {/* Cell 1 */}
       <div className="px-6 md:px-8 md:pr-0 xl:pl-20">
@@ -18,7 +18,7 @@ const OtherInfo = () => {
         <div className="grid grid-cols-1 gap-12 sm:gap-6 md:grid-cols-2 md:gap-y-16 mb-6 sm:text-center">
           <div className="flex flex-col sm:items-center sm:content-center">
             <GiftIcon
-              className="h-20 w-20 mb-6 text-action-400"
+              className="size-16 lg:size-20 mb-6 text-action-400"
               aria-hidden="true"
             />
             <div className="text-2xl font-semibold leading-7">
@@ -34,7 +34,7 @@ const OtherInfo = () => {
             </p>
           </div>
           <div className="flex flex-col sm:items-center sm:content-center">
-            <PhoneIcon className="h-16 w-16 mb-6 text-action-400 fill-current" />
+            <PhoneIcon className="size-14 lg:size-16 mb-6 text-action-400 fill-current" />
             <div className="text-2xl font-semibold leading-7">Contactos</div>
             <ul className="mt-2 text-lg leading-7">
               <li className="pb-1">
@@ -48,8 +48,8 @@ const OtherInfo = () => {
           </div>
           <div className="flex flex-col sm:items-center sm:content-center">
             <div className="flex mb-6">
-              <Suit className="h-20 w-20 text-action-400 fill-current px-1" />
-              <Dress className="h-20 w-20  text-action-400 fill-current px-1" />
+              <Suit className="size-16 lg:size-20 text-action-400 fill-current px-1" />
+              <Dress className="size-16 lg:size-20  text-action-400 fill-current px-1" />
             </div>
             <div className="text-2xl font-semibold leading-7">Dress Code</div>
             <p className="mt-2 text-lg leading-7">Formal</p>

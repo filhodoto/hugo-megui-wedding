@@ -5,12 +5,12 @@ export default function RSVP() {
   return (
     <div
       id="rsvp"
-      className="grid lg:grid-cols-2 lg:grid-flow-col gap-x-11 py-20 md:py-26 relative m-auto min-h-lvh"
+      className="grid lg:grid-cols-2 lg:grid-flow-col gap-x-11 lg:pt-40 relative m-auto min-h-lvh"
     >
       {/* For landscape */}
-      <img src={photo} alt="rsvp" className="pt-9 min-w-full lg:hidden" />
+      <img src={photo} alt="rsvp" className="min-w-full lg:hidden" />
       <div
-        className="px-6 md:px-8 xl:pl-20 bg-cover bg-no-repeat bg-top h-full w-full"
+        className="hidden lg:block px-6 md:px-8 xl:pl-20 bg-cover bg-no-repeat bg-top h-full w-full"
         style={{ backgroundImage: `url(${photo})` }}
       ></div>
 

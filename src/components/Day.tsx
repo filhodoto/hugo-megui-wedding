@@ -28,7 +28,7 @@ const hotels = [
   },
   {
     name: 'Sintra Boutique Hotel',
-    code: 'MISSING_CODE',
+    code: 'MISSING_CODE_2',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     link: 'https://sintraboutiquehotel.com/',
   },
@@ -80,7 +80,9 @@ const parkings = [
 
 const Day = () => {
   return (
-    <div id="day" className="py-20 md:py-26 relative min-h-lvh">
+    <div id="day" className="lg:pt-40 relative min-h-lvh">
+      <img src={photo} alt="rsvp" className=" min-w-full lg:hidden" />
+
       <article className="text-pretty sm:text-center px-6 md:px-8 ">
         <h2 className="heading-2 ">O Dia</h2>
         <p className="text-lg sm:text-xl ">
@@ -88,14 +90,13 @@ const Day = () => {
           ser único
         </p>
       </article>
-      <img src={photo} alt="rsvp" className="mt-12 min-w-full lg:hidden" />
 
       {/* Info Grid */}
-      <div className="grid grid-cols-2 gap-8 lg:gap-12 xl:grid-cols-3 min-h-[60vh] px-8 py-12 lg:mt-12 bg-action-50/75">
+      <div className="grid grid-cols-2 gap-8 lg:gap-12 xl:grid-cols-3 min-h-[60vh] mt-12 px-8 py-12 bg-action-50/75">
         {/* Location */}
         <div className="bg-white p-10 col-span-full flex flex-col items-center sm:col-span-1">
           <div className="flex flex-col text-center items-center mb-5 sm:mb-5">
-            <MapIcon className="h-20 w-20 mb-2 text-action-400" />
+            <MapIcon className="size-16 lg:size-20 mb-2 text-action-400" />
             <h3 className="text-2xl font-semibold leading-7 ">Localização</h3>
           </div>
           <ul className="divide-y w-full xl:w-auto">
@@ -104,13 +105,13 @@ const Day = () => {
               return (
                 <li key={event} className="py-7">
                   <div className="flex items-end pb-3">
-                    <item.icon className="h-12 w-12 fill-current mr-2 text-action-400" />
+                    <item.icon className="size-12 fill-current mr-2 text-action-400" />
                     <p className="text-2xl">{event}</p>
                   </div>
                   <p className="text-xl">{location}</p>
                   {time && <p className="text-lg pt-1">Horas: {time}</p>}
                   <a href={link} target="_blank" className="mt-2 flex">
-                    <MapPinIcon className="h-5 w-5 mr-1" />
+                    <MapPinIcon className="size-5 mr-1" />
                     {address}
                   </a>
                 </li>
@@ -122,7 +123,7 @@ const Day = () => {
         {/* Parking */}
         <div className="bg-white p-10 col-span-full	 sm:col-span-1 xl:-order-1">
           <div className="flex flex-col items-center  mb-5 sm:mb-8">
-            <Parking className="h-20 w-20 mb-2 fill-current text-action-400" />
+            <Parking className="size-16 lg:size-20 mb-2 fill-current text-action-400" />
             <h3 className="text-2xl font-semibold leading-7 ">
               Estacionamento
             </h3>
@@ -136,7 +137,7 @@ const Day = () => {
                   <p className="pt-3">{description}</p>
                   {/* <p className="text-lg">{address}</p> */}
                   <a href={link} target="_blank" className="mt-3 flex">
-                    <MapPinIcon className="h-5 w-5 mr-1" />
+                    <MapPinIcon className="size-5 mr-1" />
                     {address}
                   </a>
                   <a className="inline-block" target="_blank" href={link}>
@@ -152,7 +153,7 @@ const Day = () => {
         {/* Alojamento */}
         <div className="bg-white p-10 col-span-full xl:col-span-1">
           <div className="flex flex-col items-center t mb-5 sm:mb-8">
-            <HomeIcon className="h-20 w-20 mb-2 text-action-400" />
+            <HomeIcon className="size-16 lg:size-20 mb-2 text-action-400" />
             <h3 className="text-2xl font-semibold leading-7 ">Alojamento</h3>
           </div>
           <p>
