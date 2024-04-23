@@ -21,16 +21,16 @@ const hotels = [
     link: 'https://www.nh-hotels.com/pt/hotel/nh-sintra',
   },
   {
+    name: 'Sintra Boutique Hotel',
+    code: 'AnaHugo2024',
+    description: 'Desconto 15% através do site',
+    link: 'https://sintraboutiquehotel.com/',
+  },
+  {
     name: 'Pestana Sintra Golf',
     code: 'MISSING_CODE',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     link: 'https://www.pestana.com/pt/hotel/pestana-sintra',
-  },
-  {
-    name: 'Sintra Boutique Hotel',
-    code: 'MISSING_CODE_2',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    link: 'https://sintraboutiquehotel.com/',
   },
 ];
 
