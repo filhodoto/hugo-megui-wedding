@@ -169,11 +169,11 @@ const Form = (): JSX.Element => {
               {...register('kids', {
                 disabled: !isAttending,
               })}
+              className="form-input"
               type="text"
-              name="Crianças"
+              name="kids"
               id="kids"
               autoComplete="organization"
-              className="form-input"
             />
           </div>
         </div>
